@@ -1,4 +1,4 @@
-package employee.entity;
+package com.luv2code.hibernate.demo.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,9 +8,9 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Employee")
-public class Employee {
-
+@Table(name="Student")
+public class Student {
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id")
@@ -22,17 +22,17 @@ public class Employee {
 	@Column(name="last_name")
 	private String lastName;
 	
-	@Column(name="company")
-	private String company;
+	@Column(name="email")
+	private String email;
 	
-	public Employee() {
+	public Student() {
 		
 	}
 
-	public Employee(String firstName, String lastName, String company) {
+	public Student(String firstName, String lastName, String email) {
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.company = company;
+		this.email = email;
 	}
 
 	public int getId() {
@@ -59,19 +59,16 @@ public class Employee {
 		this.lastName = lastName;
 	}
 
-	public String getCompany() {
-		return company;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setCompany(String company) {
-		this.company = company;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	@Override
 	public String toString() {
-		return "Employee [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", company=" + company
-				+ "]";
+		return "Student [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + "]";
 	}
-	
-	
 }
